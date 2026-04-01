@@ -1,0 +1,42 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    
+  
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build and Run C++",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "main.cpp",   // change this to your cpp file
+        "-o",
+        "main.exe"    // or just "main" on Linux/Mac
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"],
+      "presentation": {
+        "reveal": "always",
+        "focus": true
+      }
+    },
+    {
+      "label": "Run C++ Executable",
+      "type": "shell",
+      "command": "./main.exe",   // use "./main" if Linux/Mac
+      "dependsOn": "Build and Run C++",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "focus": true
+      }
+    }
+  ]
+}
