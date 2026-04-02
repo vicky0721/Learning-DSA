@@ -172,7 +172,7 @@ int main() {
     LeftShiftArray(arr,size);
     printArray(arr,size);
 */
-
+/*------------------ Two digit Shift Array ---------------------------------
 void twoShiftArray(int arr[], int size){
    int temp= arr[size-1];
    int temp1=arr[size-2];
@@ -198,18 +198,19 @@ int main() {
     twoShiftArray(arr,size);
     printArray(arr,size);
 
+*/
 
+//----------------------------------- 2D Array ---------------------------------
 
-
-
-
-
-
-
-
-
-
-
+/*
+ take input and print a 2d array
+ find an element in 2d array
+ sum of each row of 2d array
+ wave print 2d array 
+ spiral print 2d array
+ move 2d array 90 degree
+ 
+*/
 
 return 0;
 }
