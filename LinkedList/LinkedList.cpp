@@ -85,7 +85,7 @@ void insertAtPosition(Node* &head, Node* &tail, int data, int position){
             // step 2 finding position 
             while(position != 1) {
                 position--;
-                prev = curr;
+                prev = curr; 
                 curr = curr->next;
             }
             
@@ -100,18 +100,49 @@ void insertAtPosition(Node* &head, Node* &tail, int data, int position){
     }
 }
 
-void printLL(Node* head){
-    // create temp node
+void printLL(Node* head) {
     Node* temp = head;
 
-    while(temp != NULL){
-        cout<<temp->data<<"->";
+    while (temp != NULL) {
+        cout << temp->data;
+
+        if (temp->next != NULL) {
+            cout << "->";
+        }
+
         temp = temp->next;
     }
-    cout<<endl;
 
+    cout << endl;
 }
 
+
+void printAtPosition(Node* head, int position) {
+
+    if (head == NULL) {
+        cout << "Linked List is empty\n";
+        return;
+    }
+
+    if (position <= 0) {
+        cout << "Invalid position entered\n";
+        return;
+    }
+
+    Node* temp = head;
+    int currPos = 1;
+
+    while (temp != NULL && currPos < position) {
+        temp = temp->next;
+        currPos++;
+    }
+
+    if (temp == NULL) {
+        cout << "Position out of range\n";
+    } else {
+        cout << temp->data << endl;
+    }
+}
 
 int main(){
 
@@ -120,11 +151,14 @@ int main(){
 
     insertAtPosition(head,tail,10,1);
     insertAtPosition(head,tail,20,2);
-    insertAtPosition(head,tail,40,4);
-//    insertAtPosition(head,tail,50,5);
     insertAtPosition(head,tail,30,3);
+    insertAtPosition(head,tail,40,3);
+    insertAtPosition(head,tail,50,5);
+    insertAtPosition(head,tail,80,100);
 
     printLL(head);
+    printAtPosition(head,3);
+    cout<<LengthLL(head);
 
 return 0;
 }
